@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Webpage project for Wdd 131, displaying the Mission statement for BYU-I.">
     <link rel="stylesheet" href="styles.css">
+    <script src="mission.js" defer></script>
 </head>
 <body>
     <div class="boxyboo">
     <header>
         <h1>MISSION STATEMENT</h1>
         <p id="byui">BRIGHAM YOUNG UNIVERSITY-IDAHO</p>
+        <select id="dark" name="Display Mode">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </select>
     </header>
     <main>
         <p>Brigham Young University-Idaho was founded and is supported and guided
@@ -28,7 +33,7 @@
         <p>4. Delivering education that is affordable for students and the Church.</p>
     </main>
     <footer>
-        <img src="images/byui-logo_blue.webp" alt="BYU-I Logo">
+        <img id="logo" src="images/byui-logo_blue.webp" alt="BYU-I Logo">
 
     </footer>
     </div>
