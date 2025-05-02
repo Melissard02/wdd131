@@ -10,7 +10,7 @@
 
 #byui {
     text-align: center;
-    color: #185b9d;
+    color: #006EB6;
     font-weight: bold;
     border-bottom: 2px solid rgba(0, 0, 0, 0.093);
     
@@ -45,6 +45,10 @@ img {
 }
 
 .dark {
-    background-color: black;
+    background-color: #333; 
     color: white;
+}
+
+.dark #byui {
+    color: #29b0ff;
 }
