@@ -1,0 +1,24 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 200px;
+    color: black;
+}
+
+header {
+
+}
+
+footer {
+
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    height: 250px;
+    width: 250px;
+}
+
+button {
+    
+}
