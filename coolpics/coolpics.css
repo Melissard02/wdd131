@@ -87,11 +87,11 @@ footer {
 
 @media screen and (min-width: 700px) {
     #main-nav {
-        display: block;
+        display: none;
     }
 
     #menu-toggle {
-        display: none;
+        display: block;
     }
     
     main {
