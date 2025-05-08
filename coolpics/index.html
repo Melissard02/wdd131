@@ -6,14 +6,23 @@
     <meta name="description" content="A super cool website that has super cool pictures.">
     <meta name="author" content="Melissa Dickerson">
     <title>Document</title>
-    <link src="stylesheet" href="coolpics.css">
+    <link rel="stylesheet" href="coolpics.css">
     <script src="coolpics.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Cool Pics 📷</h1>
-        <nav></nav>
-        <button>Menu</button>
+        <button id="menu-toggle">Menu</button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="places.html">Places</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        
     </header>
     <main>
         <h2>Current Work</h2>
@@ -45,7 +54,6 @@
             <figure>
                 <img src="images/norris-sm.jpeg" alt="picture">
             </figure>
-
         </section>
     </main>
     <footer>
