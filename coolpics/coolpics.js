@@ -6,3 +6,18 @@ document.addEventListener("DOMContentLoaded", function() {
         nav.classList.toggle("show");
     });
 });
+
+function handleResize()
+{
+    const menuToggle = document.querySelector("#menu-toggle");
+    
+    if (window.innerWidth > 1000) {
+        menuToggle.style.display = "none";
+    }
+    else {
+        menuToggle.style.display = "block";
+    }
+};
+
+window.addEventListener("resize", handleResize);
+handleResize();
