@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
 
 :root {
-    --primary-color: #52489c;
-    --secondary-color: #59c3c3;
+    --primary-color: #685ad2;
+    --secondary-color: #72cbcb;
     --accent-color: #f45b69;
     --text-dark: #333;
     --text-light: #ebebeb;
@@ -63,11 +63,76 @@ header {
 img {
     max-width: 100%;
     object-fit: cover;
-    height: 250px;
-    width: 250px;
     border: 5px solid;
     border-color: white;
     box-shadow: 5px 5px 5px #898888;
+}
+
+.gallery img {
+    width: 250px;
+    height: 250px;
+}
+
+.image-viewer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    width: 95vw;
+    max-width: 1000px;
+    max-height: 90vw;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.full {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 0.5rem;
+}
+
+.close-window {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    font-size: clamp(0.5rem, 2.5vw, 1rem);
+    
+    
+    color: var(--text-light);
+    background-color: transparent;
+    margin-top: 1rem;
+    
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+    /* z-index: 10; */
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 90vw;
+    box-sizing: border-box;
 }
 
 button {
