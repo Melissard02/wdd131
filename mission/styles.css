@@ -1,4 +1,4 @@
-.boxyboo {
+.missionbox {
     font-family:'Times New Roman', Times, serif;
     border: 2px solid rgba(0, 0, 0, 0.256);
     margin: 20px auto;
@@ -44,11 +44,22 @@ img {
 
 }
 
-.dark {
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.dark-mode {
     background-color: #333; 
     color: white;
 }
 
-.dark #byui {
+.dark-mode #byui {
     color: #29b0ff;
 }
