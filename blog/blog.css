@@ -1,12 +1,129 @@
 :root {
-    --primary-color: #efc69b;
-    --secondary-color: #72cbcb;
-    --accent-color: #f45b69;
+    --primary-color: #efdb9b;
+    --secondary-color: #844645;
+    --dark-color: #473144;
+    --gold-color: #e4cbb8;
     --text-dark: #333;
     --text-light: #ebebeb;
-    --primary-font: Arial, Helvetica,sans-serif;
-    --secondary-font: Mooli, sans-serif;
+    --primary-font: Helvetica, Arial,sans-serif;
+    --secondary-font: Lora, Impact serif;
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+    background-color: #f5f8ff;
+    color: #4b2e2e;
+    /* text-align: center; */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--gold-color);
+    padding-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gold-color);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.main-nav {
+    display: grid;
+    grid-template-columns: 80px 90px 90px;
+    justify-content: end;
+    gap: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gold-color);
+    list-style: none;
+}
+
+.book-review {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f5f8ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.book-meta {
+    width: 150px;
+    flex-shrink: 0;
+    text-align: right;
+    padding-right: 10px;
+    border-right: 1px solid var(--gold-color);
+    font-style: italic;
+    color: var(--text-dark);
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* flex-grow: 1;
+    padding-left: 20px;
+    justify-content: center; */
+}
+
+.review {
+    text-align: left;
+    max-width: 500px;
+}
+
+
+.book-review h2 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.book-review img {
+    max-width: 200px;
+    display: block;
+    margin-bottom: 15px;
+}
+.book-review p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.date, .age, .genre {
+    font-style: italic;
+    color: var(--text-dark);
+}
+
 
 
 
