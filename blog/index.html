@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Blog</title>
-    <meta description="Book Review Site, with titles catored to parents and young readers.">
+    <meta name="description" content="Review Site, with titles catored to parents and young readers.">
     <meta author="Melissa Dickerson">
     <link rel="stylesheet" href="blog.css">
     <script src="blog.js" defer></script>
 
 </head>
 <body>
+    <div class="skiptocontent">
+        <a href="#maincontent">Skip to main content</a>
+    </div>
     <h1>Kids Read for Fun</h1>
-    <section>
-        <nav>
-            <ul class="main-nav">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Archive</a></li>
-                <li><a href="#">Search</a></li>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main Navigation">
+            <ul>
+                <li><a href="#" aria-label="Visit the about page to learn more about Kids Love to Read.">About</a></li>
+                <li><a href="#" aria-label="Visit the archive to read all past reviews and posts.">Archive</a></li>
+                <li><a href="#" aria-label="Open the search window to find a specific book, author, genre, or age-range.">Search</a></li>
             </ul>
         </nav>
-    </section>
-    <main>
+    </header>
+    <main role="main" id="maincontent">
         <div class="book-review">
             <div class="book-meta">
             <p class="date">Review Date</p>
@@ -31,8 +34,8 @@
             </div>
             <div class="book-details">
                 <h2>Book Title</h2>
-                <img src="bookcover.jpg" alt="Book Cover">
-                <p class="review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro explicabo ullam, 
+                <img src="bookcover.jpg" alt="Cover of the book 'Book Title' by Author">
+                <p class="review-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro explicabo ullam, 
                     dignissimos sint voluptatem aut odit exercitationem veniam? Veritatis minus 
                     totam aperiam animi dolor incidunt veniam inventore exercitationem qui ex.
                 </p>
