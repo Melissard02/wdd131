@@ -1,3 +1,5 @@
+console.log("Hello from the JavaScript!");
+
 const articles = [
 	{
 		id: 1,
