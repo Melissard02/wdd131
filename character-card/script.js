@@ -3,7 +3,7 @@ const character = {
       class: "Just a crab?",
       level: 5,
       health: 100,
-      image: '',
+      image: 'https://melissard02.github.io/wdd131/character-card/images/crab_1200.jpg',
       attacked() {
         if (this.health >= 20) {
           this.level -= 1;
