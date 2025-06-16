@@ -25,6 +25,33 @@ ul {
 } */
 
 
-section {
+.media-card {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gallery > * {
+  flex: 1 1 460px;
+}
+
+@media screen and (min-width: 550px){
+  .media-card {
+    display: flex;
+    flex-direction: row;
+  }
+  .media-card-image {
+    flex: 0 1 250px;
+  }
+  .media-card-content {
+    flex: 0 1 60ch;
+  }
 }
