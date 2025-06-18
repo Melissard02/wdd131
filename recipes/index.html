@@ -1,0 +1,56 @@
+<!-- recipes index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="RecipeBook: A collection Recipes" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Find your next favorite meal with this curated collection of recipes." />
+    <meta property="og:image" content="https://melissard02.github.io/wdd131/Recipes/images/recipe-book.png" />
+    <meta property="og:url" content="https://melissard02.github.io/wdd131/recipes.html" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Best collection of Recipes" />
+    <meta name="twitter:description" content="Find your next favorite meal." />
+    <meta name="twitter:image" content="https://melissard02.github.io/wdd131/Recipes/images/recipe-book.png" />
+    <script src="recipes.js" defer></script>
+    <link href="recipes.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/recipe-book.png" alt="Recipe Book">
+            <h1>RecipeBook</h1> 
+        </div>
+        
+    </header>
+    <main>
+        <form>
+            <div class="search">
+                <label for="searchBar">
+                    <img src="images/search.svg" alt="Magnifing glass symbol">
+                </label>
+                <input name="searchBar" id="searchBar" type="text" required placeholder="Find a recipe">   
+            </div>
+            
+        </form>
+        <div id="recipe-container"></div>
+        <div class="rating-stars">
+        </div>
+    </main>
+    <footer>
+        <div class="social">
+            <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
+            <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
+            <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
+            <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+        </div>
+        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
+    </footer>
+    
+</body>
+</html>
