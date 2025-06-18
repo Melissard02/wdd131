@@ -1,15 +1,14 @@
 /* recipes.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap'); */
 
 :root {
- --primary-color: #1B98E0;
- --secondary-color: #59c3c3;
+ --primary-color: #054469;
+ --secondary-color: #157d7d;
  --text-dark: #333;
  --text-light: #ebebeb;
  --primary-font: Arial, Helvetica,sans-serif;
  --secondary-font: 'Fredoka', sans-serif;
- --heading-font: "Amatic SC";
 }
 
 
@@ -198,26 +197,4 @@ footer img {
         margin: 0 auto;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
