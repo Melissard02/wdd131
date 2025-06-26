@@ -282,7 +282,7 @@ const recipes = [
 	}
 ]
 
-// This is copied from a different website that I made and I think I can repurpose it for this site as well
+
 const container = document.querySelector("#recipe-container");
 
 function buildRecipe(recipe)
@@ -315,6 +315,63 @@ function getStars(rating) {
     return stars;
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
-    recipes.forEach(buildRecipe);
+    init();
 });
+
+function renderRecipes(recipeList) {
+	container.innerHTML = '';
+	recipeList.forEach(buildRecipe);
+}
+
+function init() {
+	const randomRecipe = getRandomEntry(recipes);
+	renderRecipes([randomRecipe]);
+}
+
+
+function random(num) {
+	return Math.floor(Math.random() * num);
+}
+
+
+function getRandomEntry(list) {
+	const listLen = list.length;
+	const randomNum = random(listLen)
+	return list[randomNum];
+}
+
+
+function searchHandler(e) {
+	e.preventDefault();
+
+	const searchInput = document.getElementById("search-input");
+	const query = searchInput.value.toLowerCase().trim();
+
+	const filtered = filterRecipes(query);
+	renderRecipes(filtered);
+}
+
+function filterRecipes(query) {
+	return recipes
+		.filter((recipe) => {
+			const nameMatch = recipe.name.toLowerCase().includes(query);
+			const descMatch = recipe.description.toLowerCase().includes(query);
+			const tagMatch = recipe.tags.find(tag =>
+				tag.toLowerCase().includes(query)
+			);
+			const ingredientMatch = recipe.recipeIngredient.find(ingredient =>
+				ingredient.toLowerCase().includes(query)
+			);
+			return nameMatch || descMatch || tagMatch || ingredientMatch;
+		})
+		.sort((a, b) => a.name.localeCompare(b.name));
+}
+
+const searchForm = document.getElementById("searchBar");
+searchForm.addEventListener("submit", searchHandler);
+
+document.getElementById('search-button').addEventListener('click', searchHandler);
+
+console.log(getRandomEntry(recipes));
