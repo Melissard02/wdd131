@@ -197,8 +197,50 @@ footer img {
 
 @media (min-width: 960px) {
     body {
-        max-width: 960px;
+        max-width: 1200px;
         margin: 0 auto;
     }
+
+    #recipe-container {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .recipe-card {
+        flex-direction: row;
+        align-items: center;
+        max-width: 1000px;
+        width: 100%;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .recipe-card img {
+        width: 50%;
+        max-width: 400px;
+        height: auto;
+        margin: 0;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .recipe-card > div {
+        padding: 1rem;
+        flex: 1;
+    }
+
+    .recipe-info {
+        flex: 1;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .recipe-info p {
+        word-wrap: break-word;
+    }
+
 }
 

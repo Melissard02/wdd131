@@ -291,14 +291,17 @@ function buildRecipe(recipe)
     recipeCard.classList.add("recipe-card");
 
 	recipeCard.innerHTML = `
-        <img src="${recipe.image}" alt="${recipe.name}">
+    <img src="${recipe.image}" alt="${recipe.name}">
+    <div class="recipe-info">
         <div class="tags">
             ${recipe.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
         </div>
         <h2>${recipe.name}</h2>
         <p>${recipe.description}</p>
-        <div class="rating">${getStars(recipe.rating)}</div>        
-	`;
+        <div class="rating">${getStars(recipe.rating)}</div>   
+    </div>     
+`;
+
 
 	container.appendChild(recipeCard);
 }
