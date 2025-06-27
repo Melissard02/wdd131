@@ -317,8 +317,10 @@ function getStars(rating) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    init();
+	init();
+	document.getElementById("search-form").addEventListener("submit", searchHandler);
 });
+
 
 function renderRecipes(recipeList) {
 	container.innerHTML = '';
@@ -348,9 +350,11 @@ function searchHandler(e) {
 
 	const searchInput = document.getElementById("search-input");
 	const query = searchInput.value.toLowerCase().trim();
+	console.log("Query:", query)
 
 	const filtered = filterRecipes(query);
 	renderRecipes(filtered);
+	searchInput.value = '';
 }
 
 function filterRecipes(query) {
@@ -358,20 +362,15 @@ function filterRecipes(query) {
 		.filter((recipe) => {
 			const nameMatch = recipe.name.toLowerCase().includes(query);
 			const descMatch = recipe.description.toLowerCase().includes(query);
-			const tagMatch = recipe.tags.find(tag =>
+			const tagMatch = recipe.tags.some(tag =>
 				tag.toLowerCase().includes(query)
 			);
-			const ingredientMatch = recipe.recipeIngredient.find(ingredient =>
+			const ingredientMatch = recipe.recipeIngredient.some(ingredient =>
 				ingredient.toLowerCase().includes(query)
 			);
 			return nameMatch || descMatch || tagMatch || ingredientMatch;
 		})
 		.sort((a, b) => a.name.localeCompare(b.name));
 }
-
-const searchForm = document.getElementById("searchBar");
-searchForm.addEventListener("submit", searchHandler);
-
-document.getElementById('search-button').addEventListener('click', searchHandler);
 
 console.log(getRandomEntry(recipes));
