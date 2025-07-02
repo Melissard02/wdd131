@@ -5,13 +5,13 @@ Fonts are separated by a | */
 
 :root {
   /* change the values below to your colors from your palette */
-  --primary-color: #396e94;
-  --secondary-color: #e7c24f;
-  --accent1-color: #a42212;
-  --accent2-color: white;
+  --primary-color: #0081A7;
+  --secondary-color: #b4d3ac;
+  --accent1-color: #f8ebe1;
+  --accent2-color: #a43719;
 
   /* change the values below to your chosen font(s) */
-  --heading-font: "IM Fell French Canon SC";
+  --heading-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   --paragraph-font: Lato, Helvetica, sans-serif;
 
   /* these colors below should be chosen from among your palette colors above */
