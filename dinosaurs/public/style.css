@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
+
+:root {
+  /* change the values below to your colors from your palette */
+  --primary-color: #0081A7;
+  --secondary-color: #b4d3ac;
+  --accent1-color: #f8ebe1;
+  --accent2-color: #a43719;
+
+  /* change the values below to your chosen font(s) */
+  --heading-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  --paragraph-font: Lato, Helvetica, sans-serif;
+
+  /* these colors below should be chosen from among your palette colors above */
+  --headline-color-on-white: var(
+    --primary-color
+  ); /* headlines on a white background */
+  --headline-color-on-color: white; /* headlines on a colored background */
+  --paragraph-color-on-white: var(
+    --primary-color
+  ); /* paragraph text on a white background */
+  --paragraph-color-on-color: white; /* paragraph text on a colored background */
+  --paragraph-background-color: var(--primary-color);
+  --nav-link-color: var(--primary-color);
+  --nav-background-color: var(--secondary-color);
+  --nav-hover-link-color: white;
+  --nav-hover-background-color: var(--primary-color);
+}
