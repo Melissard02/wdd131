@@ -6,6 +6,8 @@ const app = express();
 const PORT = 3000;
 const mysql = require('mysql2')
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
   res.send('Hello from your Node/Express server!');
 });
