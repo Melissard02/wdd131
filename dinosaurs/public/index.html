@@ -8,64 +8,69 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-    <header>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="dinos.html">Dinosaurs</a>
-        <a href="about.html">About</a>
-      </nav>
-    </header>
-  <h1>Dinosaur DinoPedia</h1>
-  <p>Welcome to your ultimate guide to prehistoric giants!</p>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dinos.html">Dinosaurs</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+  <div class="hero">
+    <div class="welcome">
+      <h1>Dinosaur DinoPedia</h1>
+      <p>Welcome to your ultimate guide to prehistoric giants!</p>
 
-  <a href="dinos.html">
-    <button>DINOS</button>
-  </a>
-
-  <img src="images/trex.jpg" alt="Main dinosaur image">
+      <a href="dinos.html">
+        <button>DINOS</button>
+      </a>
+    </div>
+    <img src="images/trex.jpg" alt="Main dinosaur image">
+  </div>
+  
 
   <h2>Looking period specific?</h2>
   <div class="periods">
-    <div class="cretaceous">
+    <div class="period-card">
       <a href="dinos.html?period=cretaceous">
         <img src="images/triceratops.jpg" alt="Cretaceous period">
+        <h3>Cretaceous</h3>
+        <p>Explore the mighty T-Rex and friends.</p>
       </a>
-      <h3>Cretaceous</h3>
-      <p>Explore the mighty T-Rex and friends.</p>
+      
     </div>
-    <div class="jurassic">
+    <div class="period-card">
       <a href="dinos.html?period=jurassic">
         <img src="images/allosaurus.jpg" alt="Jurassic period">
+        <h3>Jurassic</h3>
+        <p>Meet Brachiosaurus and its Jurassic pals.</p>
       </a>
-      <h3>Jurassic</h3>
-      <p>Meet Brachiosaurus and its Jurassic pals.</p>
     </div>
-    <div class="triassic">
+    <div class="period-card">
       <a href="dinos.html?period=triassic">
         <img src="images/carnivore.jpg" alt="Triassic period">
+        <h3>Triassic</h3>
+        <p>Look at these dinos of the Triassic.</p>
       </a>
-      <h3>Triassic</h3>
-      <p>Look at these dinos of the Triassic.</p>
     </div>
   </div>
 
-  <h2>Contact Me!</h2>
-  <div class="contact-form">
+  <section class="contact-wrapper">
+  <div class="contact-text">
+    <h2>Contact Me!</h2>
     <h3>Something doesn't look right?</h3>
-    <p>Let me know so I can fix it!</p>
-    <form action="/submit" method="POST">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Return Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-    <button type="submit">Submit</button>
-  </form>
+    <p>Please send me a message letting me know what I need to update!</p>
   </div>
+  <div class="contact-form">
+    <form>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+  
 </body>
 <footer>
   <p>&copy; 2025 Dinosaur DinoPedia. All rights reserved.</p>
