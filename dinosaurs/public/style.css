@@ -128,6 +128,8 @@ nav a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border-top: 2px solid var(--shadow-color);
+  border-bottom: 2px solid var(--shadow-color);
   
 }
 
@@ -178,7 +180,6 @@ nav a:hover {
   align-items: flex-start;
   padding: 2rem;
   background-color: var(--off-white);
-  border-top: 2px solid var(--shadow-color);
 }
 
 .contact-text {
