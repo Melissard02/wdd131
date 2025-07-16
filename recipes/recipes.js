@@ -301,8 +301,6 @@ function buildRecipe(recipe)
         <div class="rating">${getStars(recipe.rating)}</div>   
     </div>     
 `;
-
-
 	container.appendChild(recipeCard);
 }
 
