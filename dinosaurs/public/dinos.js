@@ -22,10 +22,11 @@ function displayDinosaurs(dinos){
         
         // Add the dino info
         card.innerHTML = `
-            <h3>${dino.name}</h3>
+            <h3>${dino.dinosaur_name}</h3>
             <p><strong>Habitat: </strong>${dino.habitat}</p>
-            <p><strong>Period: </strong>${dino.period}</p>
+            <p><strong>Period: </strong>${dino.time_period}</p>
             <p>${dino.description || ''}</p>
+            <p>${dino.wiki_link}</p>
         `;
         
         container.appendChild(card);
