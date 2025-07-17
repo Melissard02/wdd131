@@ -12,8 +12,8 @@ fetch(API_URL)
 });
 
 function displayDinosaurs(dinos){
-    const list = document.getElementById('dino-cards');
-    list.innerHTML = '';
+    const container = document.getElementById('dino-cards');
+    container.innerHTML = '';
 
     dinos.forEach(dino => {
         // Create card div
