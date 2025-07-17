@@ -26,7 +26,7 @@ function displayDinosaurs(dinos){
             <p><strong>Habitat: </strong>${dino.habitat}</p>
             <p><strong>Period: </strong>${dino.time_period}</p>
             <p>${dino.description || ''}</p>
-            <p>${dino.wiki_link}</p>
+            <a href="${dino.wiki_link}">Wikipedia</a>
         `;
         
         container.appendChild(card);
