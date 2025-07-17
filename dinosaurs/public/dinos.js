@@ -25,6 +25,7 @@ function displayDinosaurs(dinos){
         const card = document.createElement('div');
         card.className = 'dino-card';
         
+        const imgPath = imageURL(dino.dinosaur_name)
         // Add the dino info
         card.innerHTML = `
             <img src="${imgPath}" alt="${dino.dinosaur_name}"/>
