@@ -4,6 +4,7 @@ const API_URL = 'https://dino-api-xstn.onrender.com/dinosaurs';
 fetch(API_URL)
     .then(res => res.json())
     .then(data => {
+        console.log('Dino data:' , data);
         displayDinosaurs(data);
     })
     .catch(err => {
