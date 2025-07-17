@@ -11,6 +11,11 @@ fetch(API_URL)
         console.error('Failed to load dinosaurs.', err);
 });
 
+function imageURL(dinoName) {
+    const fileName = dinoName.replace(/\s+/g, '').toLowerCase() + '.png';
+    return imgPath = `images/${fileName}`;
+}
+
 function displayDinosaurs(dinos){
     const container = document.getElementById('dino-cards');
     container.innerHTML = '';
@@ -22,10 +27,11 @@ function displayDinosaurs(dinos){
         
         // Add the dino info
         card.innerHTML = `
+            <img src="${imgPath}" alt="${dino.dinosaur_name}"/>
             <h3>${dino.dinosaur_name}</h3>
             <p><strong>Habitat: </strong>${dino.habitat}</p>
             <p><strong>Period: </strong>${dino.time_period}</p>
-            <p>${dino.description || ''}</p>
+            <p>${dino.museum_list}</p>
             <a href="${dino.wiki_link}">Wikipedia</a>
         `;
         
