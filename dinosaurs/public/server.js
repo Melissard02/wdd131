@@ -15,9 +15,9 @@ const pool = new Pool({
     }
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello from Postgres + your Node/Express server!');
-});
+// app.get('/', (req, res) => {
+//   res.send('Hello from Postgres + your Node/Express server!');
+// });
 
 app.get('/dinosaurs', async (req, res) => {
     try {
