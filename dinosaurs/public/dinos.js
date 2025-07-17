@@ -1,3 +1,4 @@
+// dino.js
 const API_URL = 'https://dino-api-xstn.onrender.com/dinosaurs';
 
 fetch(API_URL)
@@ -14,7 +15,18 @@ function displayDinosaurs(dinos){
     list.innerHTML = '';
 
     dinos.forEach(dino => {
-        const li = document.createElement('li');
-        li.textContent = `${dino.name} lived in ${dino.habitat} during the ${dino.period} period.`;
+        // Create card div
+        const card = document.createElement('div');
+        card.className = 'dino-card';
+        
+        // Add the dino info
+        card.innerHTML = `
+            <h3>${dino.name}</h3>
+            <p><strong>Habitat: </strong>${dino.habitat}</p>
+            <p><strong>Period: </strong>${dino.period}</p>
+            <p>${dino.description || ''}</p>
+        `;
+        
+        container.appendChild(card);
     });
 }
