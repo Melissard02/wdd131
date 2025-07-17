@@ -12,7 +12,7 @@ fetch(API_URL)
 });
 
 function imageURL(dinoName) {
-    const fileName = dinoName.replace(/\s+/g, '').toLowerCase() + '.png';
+    const fileName = dinoName.replace(/\s+/g, '').toLowerCase() + '.jpg';
     return imgPath = `images/${fileName}`;
 }
 
