@@ -15,20 +15,6 @@ const pool = new Pool({
     }
 });
 
-app.get('/dinosaurs', async (req, res) => {
-    try {
-        const result = await pool.query('SELECT * FROM dinosaur');
-        res.json(result.rows);
-    } catch (err) {
-        console.error('DB Error: ', err);
-        res.status(500).send('Error querying database');
-    }
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
-});
-
 const dinoquery = `
     SELECT
     d.dinosaur_id,
@@ -79,4 +65,18 @@ const dinoquery = `
     JOIN museum m ON md.museum_id = m.museum_id
     GROUP BY md.dinosaur_id
     ) museums ON museums.dinosaur_id = d.dinosaur_id
-    ;`
+;`
+
+    app.get('/dinosaurs', async (req, res) => {
+    try {
+        const result = await pool.query(dinoquery);
+        res.json(result.rows);
+    } catch (err) {
+        console.error('DB Error: ', err);
+        res.status(500).send('Error querying database');
+    }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
+});
