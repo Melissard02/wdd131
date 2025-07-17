@@ -12,7 +12,7 @@ fetch(API_URL)
 });
 
 function displayDinosaurs(dinos){
-    const list = document.getElementById('dino-list');
+    const list = document.getElementById('dino-cards');
     list.innerHTML = '';
 
     dinos.forEach(dino => {
