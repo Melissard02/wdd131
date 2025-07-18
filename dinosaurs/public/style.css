@@ -501,7 +501,6 @@ footer p {
     display: block;
     align-self: flex-end;
     margin-bottom: 0.5rem;
-    z-index: 1100;
   }
 
   .nav-links {
@@ -510,10 +509,6 @@ footer p {
     width: 100%;
     background-color: var(--secondary-color);
     padding: 1rem 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
   }
 
   .nav-links.active {
