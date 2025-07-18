@@ -415,6 +415,47 @@ nav img.logo {
   }
 } */
 
+/* ===== CODE PAGE STYLING ===== */
+.source-code {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: var(--accent1-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--box-shadow);
+  text-align: center;
+}
+
+.source-code h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-family: var(--heading-font);
+}
+
+.source-code p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 1.2rem;
+  font-family: var(--paragraph-font);
+}
+
+.source-code a {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  background-color: var(--primary-color);
+  color: var(--off-white);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.source-code a:hover {
+  background-color: var(--accent3-color);
+  transform: scale(1.05);
+}
 
 
 /* FOOTER */
