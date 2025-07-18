@@ -31,7 +31,7 @@ const dinoquery = `
     COALESCE(continents.continents, 'Unknown') AS continents,
     
     -- Aggregate museums
-    COALESCE(museums.museums_list, 'None') AS museums_list
+    COALESCE(museums.museums_list, 'Unknown') AS museums_list
 
     FROM dinosaur d
 

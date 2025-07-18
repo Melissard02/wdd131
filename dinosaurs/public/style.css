@@ -246,7 +246,8 @@ nav a:hover {
 }
 
 #dino-cards {
-  display: flex;              /* put cards in a row */
+  display: flex;              /* cards ready for flex tape */
+  flex-direction: column;     /* Single column */
   flex-wrap: wrap;            /* let them wrap on smaller screens */
   gap: 20px;                  /* space between cards */
   justify-content: center;    /* center all cards in container */
@@ -273,11 +274,13 @@ nav a:hover {
 
 .dino-card img {
   width: 100%;
-  height: 150px;
-  object-fit: cover; /* keeps image from stretching weird */
+  aspect-ratio: 1 / 1;       /* LOCK that 1:1 square ratio */
+  object-fit: cover;         /* fills the square while keeping image nice */
   border-radius: 8px;
   margin-bottom: 10px;
+  display: block;            /* remove lil spacing under images */
 }
+
 
 .dino-card h3 {
   margin: 10px 0 5px;

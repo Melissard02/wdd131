@@ -32,7 +32,7 @@ function displayDinosaurs(dinos){
             <h3>${dino.dinosaur_name}</h3>
             <p><strong>Habitat: </strong>${dino.habitat}</p>
             <p><strong>Period: </strong>${dino.time_period}</p>
-            <p>Featured in Museum: ${dino.museums_list}</p>
+            <p><strong>Featured in Museum: </strong>${dino.museums_list}</p>
             <a href="${dino.wiki_link}">Wikipedia</a>
         `;
         
