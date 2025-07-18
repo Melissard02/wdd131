@@ -139,6 +139,8 @@ nav img.logo {
   height: auto;
   margin-top: 1rem;
   border-radius: 8px;
+  flex-shrink: 1;
+  flex-grow: 1;
 }
 
 /* PERIODS SECTION */
