@@ -151,7 +151,7 @@ nav img.logo {
 
 .hero-img-wrapper img {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
   border-radius: 12px;
   object-fit: cover;
@@ -472,6 +472,15 @@ nav img.logo {
   transform: scale(1.05);
 }
 
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
 
 /* FOOTER */
 footer {
@@ -488,14 +497,32 @@ footer p {
 
 /* ========= MOBILE RESPONSIVE STYLING ========= */
 @media (max-width: 768px) {
-  /* NAVIGATION */
-  nav {
+  .hamburger {
+    display: block;
+    align-self: flex-end;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-links {
+    display: none;
     flex-direction: column;
+    width: 100%;
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  nav {
     align-items: flex-start;
   }
 
   nav a {
-    margin: 0.5rem 0;
+    width: 100%;
+    text-align: left;
+    padding-left: 1rem;
   }
 
   /* HERO SECTION */
