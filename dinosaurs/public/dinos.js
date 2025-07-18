@@ -11,6 +11,55 @@ fetch(API_URL)
         console.error('Failed to load dinosaurs.', err);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const countries = [
+        'United States of America',
+        'Canada',
+        'Great Britain',
+        'Brazil',
+        'China',
+        'Australia',
+        'Egypt',
+        'Nigeria',
+        'Antarctica',
+        'Mexico',
+        'Argentina',
+        'Germany',
+        'France',
+        'India',
+        'Japan',
+        'South Korea',
+        'New Zealand',
+        'South Africa',
+        'Kenya',
+        'Chile',
+        'Belgium',
+        'Thailand',
+        'Mongolia',
+        'Portugal',
+        'Tanzania',
+        'Switzerland',
+        'Niger',
+        'Morocco',
+        'Russia',
+        'Cameroon',
+        'Netherlands'
+];
+
+const select = document.getElementById('country');
+
+// Clear existing options except "All"
+select.innerHTML = '<option value="">All</option>';
+
+countries.sort().forEach(country => {
+    const option = document.createElement('option');
+    option.value = country.toLowerCase().replace(/\s+/g, '');
+    option.textContent = country;
+    select.appendChild(option);
+});
+});
+
+
 function imageURL(dinoName) {
     const fileName = dinoName.replace(/\s+/g, '').toLowerCase() + '.jpg';
     return imgPath = `images/${fileName}`;
