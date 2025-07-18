@@ -355,7 +355,7 @@ nav img.logo {
 
 #filter-form {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 16px;
   align-items: center;
   justify-content: flex-start;
