@@ -270,7 +270,6 @@ nav a:hover {
   padding: 20px;
   margin: 0 auto;                    /* center the card horizontally */
   transition: transform 0.3s ease;
-  cursor: pointer;
 }
 
 
@@ -319,6 +318,7 @@ nav a:hover {
   text-align: center;
   align-self: flex-end;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .dino-card a:hover {
