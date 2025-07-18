@@ -498,8 +498,9 @@ footer p {
 /* ========= MOBILE RESPONSIVE STYLING ========= */
 @media (max-width: 768px) {
   .hamburger {
-    display: block;
-    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
     margin-bottom: 0.5rem;
   }
 
@@ -516,7 +517,6 @@ footer p {
   }
 
   nav {
-    position: relative;
     flex-direction: column;
   }
 
