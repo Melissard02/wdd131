@@ -308,7 +308,7 @@ nav a:hover {
 .dino-card a {
   display: inline-block;
   margin-top: 10px;
-  padding: 6px 12px;
+  padding: 6px 14px;
   background-color: var(--secondary-color);
   color: var(--text-color);
   text-decoration: none;
@@ -316,7 +316,7 @@ nav a:hover {
   font-weight: bold;
   font-size: 0.9rem;
   text-align: center;
-  min-width: 100px;
+  align-self: flex-end;
   transition: background-color 0.3s ease;
 }
 
