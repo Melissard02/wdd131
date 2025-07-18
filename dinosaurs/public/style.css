@@ -80,6 +80,12 @@ nav a:hover {
   color: var(--nav-hover-link-color);
 }
 
+nav img.logo {
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
 /* HERO SECTION */
 .hero {
   display: flex;
