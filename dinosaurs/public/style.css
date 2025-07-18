@@ -251,7 +251,7 @@ nav a:hover {
   flex-direction: column;     /* Single column */
   gap: 20px;                  /* space between cards */
   justify-content: center;    /* center all cards in container */
-  padding: 20px;
+  padding: 10px;
   background-color: var(--accent1-color);
   align-items: center;
 }
@@ -265,7 +265,7 @@ nav a:hover {
   border-radius: 10px;
   box-shadow: 0 4px 8px var(--box-shadow);
   width: 100%;                       /* make it stretch full width */
-  max-width: 800px;                  /* but not tooooo wide */
+  max-width: 900px;                  /* but not tooooo wide */
   padding: 20px;
   margin: 0 auto;                    /* center the card horizontally */
   transition: transform 0.3s ease;
@@ -274,7 +274,7 @@ nav a:hover {
 
 
 .dino-card:hover {
-  transform: scale(1.05); /* card gets a lil bigger on hover for flair */
+  transform: scale(1.02); /* card gets a lil bigger on hover for flair */
   box-shadow: 0 6px 12px var(--box-shadow);
 }
 
@@ -312,14 +312,18 @@ nav a:hover {
   background-color: var(--secondary-color);
   color: var(--text-color);
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  min-width: 100px;
   transition: background-color 0.3s ease;
 }
 
 .dino-card a:hover {
   background-color: var(--primary-color);
   color: var(--off-white);
+  transform: scale(1.05);
 }
 
 
