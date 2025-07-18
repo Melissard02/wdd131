@@ -64,6 +64,11 @@ header h1 {
   color: var(--off-white);
 }
 
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav a {
   margin-left: 1rem;
   text-decoration: none;
@@ -79,6 +84,14 @@ nav a:hover {
   background-color: var(--nav-hover-background-color);
   color: var(--nav-hover-link-color);
 }
+
+/* Logo styling */
+nav img.logo {
+  height: 40px;  /* Adjust height to fit your header nicely */
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
 
 /* HERO SECTION */
 .hero {
