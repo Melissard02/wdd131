@@ -85,16 +85,16 @@ nav a:hover {
   color: var(--nav-hover-link-color);
 }
 
+nav a.logo-link:hover {
+  background-color: transparent;
+  color: inherit;
+}
+
 /* Logo styling */
 nav img.logo {
   height: 40px;  /* Adjust height to fit your header nicely */
   vertical-align: middle;
   margin-right: 1rem;
-}
-
-nav img.logo:hover {
-  background-color: none;
-  color: none;
 }
 
 
