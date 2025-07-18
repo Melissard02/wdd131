@@ -128,7 +128,7 @@ nav a:hover {
   padding: 2rem 1rem;
   background-color: var(--accent1-color);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   border-top: 2px solid var(--shadow-color);
   border-bottom: 2px solid var(--shadow-color);
@@ -143,6 +143,8 @@ nav a:hover {
 }
 
 .period-card {
+  display: flex;
+  flex-direction: row;
   background-color: var(--off-white);
   border-radius: 8px;
   box-shadow: 0 2px 5px var(--box-shadow);
