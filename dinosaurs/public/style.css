@@ -249,24 +249,29 @@ nav a:hover {
 #dino-cards {
   display: flex;              /* cards ready for flex tape */
   flex-direction: column;     /* Single column */
-  flex-wrap: wrap;            /* let them wrap on smaller screens */
   gap: 20px;                  /* space between cards */
   justify-content: center;    /* center all cards in container */
   padding: 20px;
-  background-color: var(--accent1-color); /* light blue background for dino vibes */
+  background-color: var(--accent1-color);
+  align-items: center;
 }
 
 .dino-card {
+  display: flex;                      /* make image & text side-by-side */
+  flex-direction: row;               /* row layout: image on left, text on right */
+  align-items: flex-start;           /* align items to the top */
+  gap: 20px;                          /* space between image and text */
   background-color: var(--off-white);
   border-radius: 10px;
   box-shadow: 0 4px 8px var(--box-shadow);
-  width: 250px;
-  padding: 15px;
-  text-align: center;
-  font-family: var(--paragraph-font);
+  width: 100%;                       /* make it stretch full width */
+  max-width: 800px;                  /* but not tooooo wide */
+  padding: 20px;
+  margin: 0 auto;                    /* center the card horizontally */
   transition: transform 0.3s ease;
   cursor: pointer;
 }
+
 
 .dino-card:hover {
   transform: scale(1.05); /* card gets a lil bigger on hover for flair */
@@ -274,14 +279,19 @@ nav a:hover {
 }
 
 .dino-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;       /* LOCK that 1:1 square ratio */
-  object-fit: cover;         /* fills the square while keeping image nice */
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 10px;
-  display: block;            /* remove lil spacing under images */
+  flex-shrink: 0;                     /* don’t let it shrink */
 }
 
+.dino-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;                            /* fill the rest of the card */
+}
 
 .dino-card h3 {
   margin: 10px 0 5px;
