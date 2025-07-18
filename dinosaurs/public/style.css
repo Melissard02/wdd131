@@ -104,11 +104,16 @@ nav img.logo {
   flex-direction: row;
   text-align: left;
   padding: 2rem 1rem;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-shrink: 1;
   height: auto;
   width: auto;
   max-width: 100%;
+}
+
+.welcome {
+  flex: 1 1 50%;
+  max-width: 600px;
 }
 
 .hero h2 {
@@ -137,16 +142,20 @@ nav img.logo {
   background-color: var(--accent3-color);
 }
 
-.hero img {
-  width: 100%;
-  max-width: auto;
-  height: auto;
-  margin-top: 1rem;
-  border-radius: 8px;
-  flex-shrink: 1;
-  flex-grow: 1;
+.hero-img-wrapper {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.hero-img-wrapper img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
 /* PERIODS SECTION */
 .periods {
   padding: 2rem 1rem;
