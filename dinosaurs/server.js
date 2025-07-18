@@ -65,6 +65,7 @@ const dinoquery = `
     JOIN museum m ON md.museum_id = m.museum_id
     GROUP BY md.dinosaur_id
     ) museums ON museums.dinosaur_id = d.dinosaur_id
+    ORDER BY d.dinosaur_name
 ;`
 
     app.get('/dinosaurs', async (req, res) => {
