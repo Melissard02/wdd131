@@ -470,3 +470,81 @@ footer {
 footer p {
   margin: 0.5rem 0;
 }
+
+/* ========= MOBILE RESPONSIVE STYLING ========= */
+@media (max-width: 768px) {
+  /* NAVIGATION */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .hero img {
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* PERIOD CARDS STACK */
+  .period-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .period-card {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* CONTACT SECTION STACK */
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .contact-text,
+  .contact-form {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  /* DINO CARD STACK */
+  .dino-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .dino-card img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .dino-info {
+    align-items: center;
+  }
+
+  /* FILTER FORM STACK */
+  #filter-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  #filter-form label,
+  #filter-form select,
+  #filter-form button {
+    width: 100%;
+    flex: none;
+  }
+}
