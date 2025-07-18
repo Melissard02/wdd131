@@ -12,7 +12,14 @@ fetch(API_URL)
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const countries = [
+  const urlParams = new URLSearchParams(window.location.search);
+  const periodParam = urlParams.get('period');
+  const continentParam = urlParams.get('continent');
+  const countryParam = urlParams.get('country');
+  const museumParam = urlParams.get('museum');
+
+  
+    const countries = [
     'United States of America',
     'Canada',
     'Great Britain',
@@ -91,6 +98,37 @@ document.addEventListener('DOMContentLoaded', () => {
     option.textContent = museum;
     museumSelect.appendChild(option);
   });
+    // Set filters from URL if present
+  if (periodParam) {
+    document.getElementById('period').value = capitalize(periodParam);
+  }
+
+  if (continentParam) {
+    document.getElementById('continent').value = formatSelectValue(continentParam);
+  }
+
+  if (countryParam) {
+    document.getElementById('country').value = formatSelectValue(countryParam);
+  }
+
+  if (museumParam) {
+    document.getElementById('museum').value = formatSelectValue(museumParam);
+  }
+
+  // Trigger the form filter if there's a param
+  if (periodParam || continentParam || countryParam || museumParam) {
+    document.getElementById('filter-form').dispatchEvent(new Event('submit'));
+  }
+
+  function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+  function formatSelectValue(value) {
+  return value.toLowerCase().replace(/\s+/g, '');
+    }
+
+
 });
 
 document.getElementById('filter-form').addEventListener('submit', function (e) {
