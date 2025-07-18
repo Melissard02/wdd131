@@ -1,85 +1,187 @@
-// server.js
+// dino.js
+const API_URL = 'https://dino-api-xstn.onrender.com/dinosaurs';
 
-require('dotenv').config()
-const express = require('express');
-const app = express();
-const {Pool} = require('pg')
-const PORT = process.env.PORT || 3000;
+fetch(API_URL)
+    .then(res => res.json())
+    .then(data => {
+        console.log('Dino data:' , data);
+        displayDinosaurs(data);
+    })
+    .catch(err => {
+        console.error('Failed to load dinosaurs.', err);
+});
 
-app.use(express.static('public'));
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const periodParam = urlParams.get('period');
+  const continentParam = urlParams.get('continent');
+  const countryParam = urlParams.get('country');
+  const museumParam = urlParams.get('museum');
 
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
+  
+    const countries = [
+    'United States of America',
+    'Canada',
+    'Great Britain',
+    'Brazil',
+    'China',
+    'Australia',
+    'Egypt',
+    'Nigeria',
+    'Antarctica',
+    'Mexico',
+    'Argentina',
+    'Germany',
+    'France',
+    'India',
+    'Japan',
+    'South Korea',
+    'New Zealand',
+    'South Africa',
+    'Kenya',
+    'Chile',
+    'Belgium',
+    'Thailand',
+    'Mongolia',
+    'Portugal',
+    'Tanzania',
+    'Switzerland',
+    'Niger',
+    'Morocco',
+    'Russia',
+    'Cameroon',
+    'Netherlands'
+  ];
+
+  const museums = [
+    'American Museum of Natural History',
+    'Australian Museum',
+    'Carnegie Museum of Natural History',
+    'Denver Museum of Nature & Science',
+    'Dinosaur National Monument Visitor Center',
+    'Fernbank Museum of Natural History',
+    'Field Museum',
+    'Fukui Prefectural Dinosaur Museum',
+    'Houston Museum of Natural Science',
+    'Iziko South African Museum',
+    'Museum für Naturkunde',
+    'Museum of Paleontology Egidio Feruglio',
+    'Naturalis Biodiversity Center',
+    'National Museum of Nature and Science',
+    'Natural History Museum',
+    'Natural History Museum of Los Angeles County',
+    'Perot Museum of Nature and Science',
+    'Royal Belgian Institute of Natural Sciences',
+    'Royal Ontario Museum',
+    'Royal Tyrrell Museum of Palaeontology',
+    'Smithsonian National Museum of Natural History',
+    'Yale Peabody Museum of Natural History'
+  ];
+
+  const countrySelect = document.getElementById('country');
+  const museumSelect = document.getElementById('museum');
+
+  // Populate countries
+  countrySelect.innerHTML = '<option value="">All</option>';
+  countries.sort().forEach(country => {
+    const option = document.createElement('option');
+    option.value = country.toLowerCase().replace(/\s+/g, '');
+    option.textContent = country;
+    countrySelect.appendChild(option);
+  });
+
+  // Populate museums
+  museumSelect.innerHTML = '<option value="">All</option>';
+  museums.sort().forEach(museum => {
+    const option = document.createElement('option');
+    option.value = museum;
+    option.textContent = museum;
+    museumSelect.appendChild(option);
+  });
+    // Set filters from URL if present
+  if (periodParam) {
+    document.getElementById('period').value = capitalize(periodParam);
+  }
+
+  if (continentParam) {
+    document.getElementById('continent').value = formatSelectValue(continentParam);
+  }
+
+  if (countryParam) {
+    document.getElementById('country').value = formatSelectValue(countryParam);
+  }
+
+  if (museumParam) {
+    document.getElementById('museum').value = formatSelectValue(museumParam);
+  }
+
+  // Trigger the form filter if there's a param
+  if (periodParam || continentParam || countryParam || museumParam) {
+    document.getElementById('filter-form').dispatchEvent(new Event('submit'));
+  }
+
+  function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
     }
+
+  function formatSelectValue(value) {
+  return value.toLowerCase().replace(/\s+/g, '');
+    }
+
+
 });
 
-app.get('/dinosaurs', async (req, res) => {
-  const { continent, country, period, museum } = req.query;
+document.getElementById('filter-form').addEventListener('submit', function (e) {
+  e.preventDefault();
 
-  let baseQuery = `
-    SELECT
-      d.dinosaur_id,
-      d.dinosaur_name,
-      d.diet,
-      d.time_period,
-      d.common_name,
-      d.wiki_link,
-      COALESCE(countries.habitats, 'Unknown') AS habitat,
-      COALESCE(continents.continents, 'Unknown') AS continents,
-      COALESCE(museums.museums_list, 'Unknown') AS museums_list
-    FROM dinosaur d
-    LEFT JOIN (
-      SELECT h.dinosaur_id, STRING_AGG(DISTINCT c.country_name, ', ') AS habitats
-      FROM habitat h JOIN country c ON h.country_id = c.country_id
-      GROUP BY h.dinosaur_id
-    ) countries ON countries.dinosaur_id = d.dinosaur_id
-    LEFT JOIN (
-      SELECT h.dinosaur_id, STRING_AGG(DISTINCT cn.continent_name, ', ') AS continents
-      FROM habitat h
-      JOIN country c ON h.country_id = c.country_id
-      JOIN continent cn ON c.continent_id = cn.continent_id
-      GROUP BY h.dinosaur_id
-    ) continents ON continents.dinosaur_id = d.dinosaur_id
-    LEFT JOIN (
-      SELECT md.dinosaur_id, STRING_AGG(DISTINCT m.museum_name, ', ') AS museums_list
-      FROM museum_dinosaur md
-      JOIN museum m ON md.museum_id = m.museum_id
-      GROUP BY md.dinosaur_id
-    ) museums ON museums.dinosaur_id = d.dinosaur_id
-    WHERE 1=1
-  `;
+  const filters = {
+    continent: document.getElementById('continent').value,
+    country: document.getElementById('country').value,
+    period: document.getElementById('period').value,
+    museum: document.getElementById('museum').value
+  };
 
-  const params = [];
+  const queryString = new URLSearchParams(filters).toString();
 
-  if (continent) {
-    baseQuery += ` AND continents.continents ILIKE $${params.length + 1}`;
-    params.push(`%${continent}%`);
-  }
-
-  if (country) {
-    baseQuery += ` AND countries.habitats ILIKE $${params.length + 1}`;
-    params.push(`%${country}%`);
-  }
-
-  if (period) {
-    baseQuery += ` AND d.time_period ILIKE $${params.length + 1}`;
-    params.push(`%${period}%`);
-  }
-
-  if (museum) {
-    baseQuery += ` AND museums.museums_list ILIKE $${params.length + 1}`;
-    params.push(`%${museum}%`);
-  }
-
-  baseQuery += ` ORDER BY d.dinosaur_name`;
-
-  try {
-    const result = await pool.query(baseQuery, params);
-    res.json(result.rows);
-  } catch (err) {
-    console.error('Filter query error: ', err);
-    res.status(500).send('Filtering error');
-  }
+  fetch(`/dinosaurs?${queryString}`)
+    .then(res => res.json())
+    .then(data => {
+      displayDinosaurs(data);
+    })
+    .catch(err => {
+      console.error('Error filtering dinos:', err);
+    });
 });
+
+
+
+function imageURL(dinoName) {
+    const fileName = dinoName.replace(/\s+/g, '').toLowerCase() + '.jpg';
+    return imgPath = `images/${fileName}`;
+}
+
+function displayDinosaurs(dinos){
+    const container = document.getElementById('dino-cards');
+    container.innerHTML = '';
+
+    dinos.forEach(dino => {
+        // Create card div
+        const card = document.createElement('div');
+        card.className = 'dino-card';
+        
+        const imgPath = imageURL(dino.dinosaur_name)
+        // Add the dino info
+        card.innerHTML = `
+            <img src="${imgPath}" alt="${dino.dinosaur_name}"/>
+            <div class="dino-info">
+                <h3>${dino.dinosaur_name}</h3>
+                <p><strong>Habitat: </strong>${dino.habitat}</p>
+                <p><strong>Period: </strong>${dino.time_period}</p>
+                <p><strong>Featured in Museum: </strong>${dino.museums_list}</p>
+                <a href="${dino.wiki_link}">Wikipedia</a>
+            </div>
+        `;
+        
+        container.appendChild(card);
+    });
+}
