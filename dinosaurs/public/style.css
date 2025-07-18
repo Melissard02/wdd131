@@ -87,9 +87,14 @@ nav a:hover {
 
 /* Logo styling */
 nav img.logo {
-  height: 10px;  /* Adjust height to fit your header nicely */
+  height: 40px;  /* Adjust height to fit your header nicely */
   vertical-align: middle;
   margin-right: 1rem;
+}
+
+nav img.logo:hover {
+  background-color: none;
+  color: none;
 }
 
 
