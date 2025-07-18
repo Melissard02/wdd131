@@ -21,6 +21,17 @@
 
   <main>
     <form id="filter-form">
+      <label for="continent">Continent:</label>
+      <select id="continent" name="continent">
+        <option value="">ALL</option>
+        <option value="northamerica">North America</option>
+        <option value="southamerica">South America</option>
+        <option value="europe">Europe</option>
+        <option value="asia">Asia</option>
+        <option value="africa">Africa</option>
+        <option value="oceania">Oceania</option>
+        <option value="antartctica">Antarctica</option>
+      </select>
       <label for="country">Country:</label>
       <select id="country" name="country">
         <option value="">ALL</option>
@@ -31,6 +42,10 @@
         <option value="Jurassic">Jurassic</option>
         <option value="Cretaceous">Cretaceous</option>
         <option value="Triassic">Triassic</option>
+      </select>
+      <label>Museum:</label>
+      <select id="museum" name="museum">
+        <option value="">All</option>
       </select>
 
       <button type="submit">Filter</button>

@@ -12,52 +12,109 @@ fetch(API_URL)
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const countries = [
-        'United States of America',
-        'Canada',
-        'Great Britain',
-        'Brazil',
-        'China',
-        'Australia',
-        'Egypt',
-        'Nigeria',
-        'Antarctica',
-        'Mexico',
-        'Argentina',
-        'Germany',
-        'France',
-        'India',
-        'Japan',
-        'South Korea',
-        'New Zealand',
-        'South Africa',
-        'Kenya',
-        'Chile',
-        'Belgium',
-        'Thailand',
-        'Mongolia',
-        'Portugal',
-        'Tanzania',
-        'Switzerland',
-        'Niger',
-        'Morocco',
-        'Russia',
-        'Cameroon',
-        'Netherlands'
-];
+  const countries = [
+    'United States of America',
+    'Canada',
+    'Great Britain',
+    'Brazil',
+    'China',
+    'Australia',
+    'Egypt',
+    'Nigeria',
+    'Antarctica',
+    'Mexico',
+    'Argentina',
+    'Germany',
+    'France',
+    'India',
+    'Japan',
+    'South Korea',
+    'New Zealand',
+    'South Africa',
+    'Kenya',
+    'Chile',
+    'Belgium',
+    'Thailand',
+    'Mongolia',
+    'Portugal',
+    'Tanzania',
+    'Switzerland',
+    'Niger',
+    'Morocco',
+    'Russia',
+    'Cameroon',
+    'Netherlands'
+  ];
 
-const select = document.getElementById('country');
+  const museums = [
+    'American Museum of Natural History',
+    'Australian Museum',
+    'Carnegie Museum of Natural History',
+    'Denver Museum of Nature & Science',
+    'Dinosaur National Monument Visitor Center',
+    'Fernbank Museum of Natural History',
+    'Field Museum',
+    'Fukui Prefectural Dinosaur Museum',
+    'Houston Museum of Natural Science',
+    'Iziko South African Museum',
+    'Museum für Naturkunde',
+    'Museum of Paleontology Egidio Feruglio',
+    'Naturalis Biodiversity Center',
+    'National Museum of Nature and Science',
+    'Natural History Museum',
+    'Natural History Museum of Los Angeles County',
+    'Perot Museum of Nature and Science',
+    'Royal Belgian Institute of Natural Sciences',
+    'Royal Ontario Museum',
+    'Royal Tyrrell Museum of Palaeontology',
+    'Smithsonian National Museum of Natural History',
+    'Yale Peabody Museum of Natural History'
+  ];
 
-// Clear existing options except "All"
-select.innerHTML = '<option value="">All</option>';
+  const countrySelect = document.getElementById('country');
+  const museumSelect = document.getElementById('museum');
 
-countries.sort().forEach(country => {
+  // Populate countries
+  countrySelect.innerHTML = '<option value="">All</option>';
+  countries.sort().forEach(country => {
     const option = document.createElement('option');
     option.value = country.toLowerCase().replace(/\s+/g, '');
     option.textContent = country;
-    select.appendChild(option);
+    countrySelect.appendChild(option);
+  });
+
+  // Populate museums
+  museumSelect.innerHTML = '<option value="">All</option>';
+  museums.sort().forEach(museum => {
+    const option = document.createElement('option');
+    option.value = museum.toLowerCase().replace(/\s+/g, '').replace(/&/g, 'and');
+    option.textContent = museum;
+    museumSelect.appendChild(option);
+  });
 });
+
+document.getElementById('filter-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const filters = {
+    continent: document.getElementById('continent').value,
+    country: document.getElementById('country').value,
+    period: document.getElementById('period').value,
+    museum: document.getElementById('museum').value
+  };
+
+  const queryString = new URLSearchParams(filters).toString();
+
+  fetch(`/dinosaurs?${queryString}`)
+    .then(res => res.json())
+    .then(data => {
+      displayDinosaurs(data);
+    })
+    .catch(err => {
+      console.error('Error filtering dinos:', err);
+    });
 });
+
 
 
 function imageURL(dinoName) {
