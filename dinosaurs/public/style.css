@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
 
 :root {
-  --primary-color: #0081A7;
+  --primary-color: #005771;
   --secondary-color: #b4d3ac;
   --accent1-color: #fff5ee;
   --accent2-color: #a43719;
-  --accent3-color: #2c7a7b;
+  --accent3-color: #234445;
   --text-color: #515151;
   --shadow-color: #d7d5d5d5;
   --box-shadow: rgba(0,0,0,0.1);
