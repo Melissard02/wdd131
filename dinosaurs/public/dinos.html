@@ -20,9 +20,26 @@
   </header>
 
   <main>
-    <form>
-      
+    <form id="filter-form">
+      <label for="habitat">Habitat:</label>
+      <select id="habitat" name="habitat">
+        <option value="">All</option>
+        <option value="forest">Forest</option>
+        <option value="desert">Desert</option>
+        <option value="swamp">Swamp</option>
+      </select>
+
+      <label for="period">Period:</label>
+      <select id="period" name="period">
+        <option value="">All</option>
+        <option value="Jurassic">Jurassic</option>
+        <option value="Cretaceous">Cretaceous</option>
+        <option value="Triassic">Triassic</option>
+      </select>
+
+      <button type="submit">Filter</button>
     </form>
+
     <section id="filter-info">
       <!-- We'll show here if the user is filtering-->
     </section>
