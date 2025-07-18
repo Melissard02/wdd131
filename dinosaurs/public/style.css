@@ -152,7 +152,7 @@ nav img.logo {
 .period-cards {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 10px;
 }
 
