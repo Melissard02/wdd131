@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
   museumSelect.innerHTML = '<option value="">All</option>';
   museums.sort().forEach(museum => {
     const option = document.createElement('option');
-    option.value = museum.toLowerCase().replace(/\s+/g, '').replace(/&/g, 'and');
+    option.value = museum;
     option.textContent = museum;
     museumSelect.appendChild(option);
   });
