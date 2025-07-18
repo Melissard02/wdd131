@@ -105,6 +105,10 @@ nav img.logo {
   text-align: left;
   padding: 2rem 1rem;
   justify-content: space-around;
+  flex-shrink: 1;
+  height: auto;
+  width: auto;
+  max-width: 100%;
 }
 
 .hero h2 {
@@ -135,7 +139,7 @@ nav img.logo {
 
 .hero img {
   width: 100%;
-  max-width: 800px;
+  max-width: auto;
   height: auto;
   margin-top: 1rem;
   border-radius: 8px;
